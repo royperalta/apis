@@ -27,6 +27,10 @@ public class Producto {
 
     private Integer estado;
 
+    @ManyToMany
+    @JoinColumn(name = "CATEGORIAS_id_categoria", insertable = false,updatable = false)
+    private Categorias categorias;
+
     public Integer getIdProducto() {
         return idProducto;
     }

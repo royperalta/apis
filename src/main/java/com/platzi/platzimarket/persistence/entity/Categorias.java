@@ -1,9 +1,7 @@
 package com.platzi.platzimarket.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "CATEGORIAS")
@@ -16,4 +14,7 @@ public class Categorias {
     private String descripcion;
 
     private String estado;
+    @OneToMany(mappedBy = "categorias")
+    private List<Producto> productos;
+
 }
